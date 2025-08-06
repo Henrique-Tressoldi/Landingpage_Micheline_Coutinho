@@ -1,0 +1,42 @@
+.services-section {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+.service-item {
+  background-color: var(--white-color);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.notice-text {
+  margin-top: 4rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}

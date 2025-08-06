@@ -1,0 +1,50 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-weight: 600;
+  color: var(--dark-color);
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Simplificado para um menu que desaparece no mobile */
+  }
+}

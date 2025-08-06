@@ -1,0 +1,71 @@
+:root {
+  --primary-color: #B16464; /* Vinho/Marsala da publicação */
+  --secondary-color: #F7F3E9; /* Bege claro/creme */
+  --text-color: #333333;
+  --white-color: #FFFFFF;
+  --dark-color: #1A1A1A;
+
+  --font-family: 'Poppins', sans-serif;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #7a4646;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
