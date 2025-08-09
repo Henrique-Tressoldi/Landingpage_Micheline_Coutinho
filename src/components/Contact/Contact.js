@@ -51,7 +51,7 @@ function Contact() {
           <div className="contact-map w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg flex justify-center lg:justify-end">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28602.95372612347!2d-62.47494970696537!3d-10.431766591140931!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93cbeabfde6b22b1%3A0x26a9734013537023!2sAv.%20Padre%20Adolpho%20Rohl%2C%202251%20-%20St.%201%2C%20Jaru%20-%20RO%2C%2076890-000%2C%20Brazil!5e0!3m2!1sen!2sus!4v1754513802359!5m2!1sen!2sus"
-              width="400"
+              width="600"
               height="300"
               style={{ border: 0 }}
               allowFullScreen=""

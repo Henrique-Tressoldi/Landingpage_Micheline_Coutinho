@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <p>Desenvolvido com excelência. © {new Date().getFullYear()} Dra. Michelline Menezes. Todos os direitos reservados.</p>
+        <p>Desenvolvido com excelência. © {new Date().getFullYear()} Dra. Micheline Menezes. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

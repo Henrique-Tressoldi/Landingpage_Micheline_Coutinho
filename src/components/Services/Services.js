@@ -32,9 +32,6 @@ function Services() {
           ))}
         </div>
         <div className="notice-text">
-          <p>
-            **Aviso:** Cursos de aperfeiçoamento nas áreas de dentística restauradora, cirurgia oral menor e endodontia. Não são especialidades.
-          </p>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <h1 className="logo">
-          Dra. Michelline Menezes
+          Dra. Micheline Menezes
         </h1>
         <nav className="nav-menu">
           <ul>
