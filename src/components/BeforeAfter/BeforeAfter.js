@@ -1,27 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './BeforeAfter.css';
 
 function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef(null);
 
-  const handleDragStart = () => {
-    setIsDragging(true);
-  };
-
-  const handleDragEnd = () => {
-    setIsDragging(false);
-  };
-
-  const handleSliderMove = (e) => {
-    if (!isDragging) return;
-    const container = e.currentTarget;
-    const rect = container.getBoundingClientRect();
-    let x = (e.clientX || e.touches[0].clientX) - rect.left;
+  const updateSlider = (clientX) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    let x = clientX - rect.left;
     if (x < 0) x = 0;
     if (x > rect.width) x = rect.width;
-    const position = (x / rect.width) * 100;
-    setSliderPosition(position);
+    setSliderPosition((x / rect.width) * 100);
+  };
+
+  const handleMouseMove = (e) => {
+    if (e.buttons === 1) updateSlider(e.clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    updateSlider(e.touches[0].clientX);
   };
 
   return (
@@ -31,22 +29,30 @@ function BeforeAfter() {
         <p className="section-subtitle">
           A verdadeira mudança vai além do sorriso, ela acontece na sua autoestima e na forma como você interage com o mundo.
         </p>
+
         <div
+          ref={containerRef}
           className="before-after-slider"
-          onMouseMove={handleSliderMove}
-          onMouseDown={handleDragStart}
-          onMouseUp={handleDragEnd}
-          onMouseLeave={handleDragEnd}
-          onTouchMove={(e) => handleSliderMove(e.touches[0])}
-          onTouchStart={handleDragStart}
-          onTouchEnd={handleDragEnd}
+          onMouseMove={handleMouseMove}
+          onTouchMove={handleTouchMove}
         >
-          <div className="image-container after" style={{ width: `${100 - sliderPosition}%` }}>
-            <img src="/assets/depois1.jpg" alt="Depois do tratamento odontológico" />
-          </div>
-          <div className="image-container before" style={{ width: `${sliderPosition}%` }}>
-            <img src="/assets/antes1.jpg" alt="Antes do tratamento odontológico" />
-          </div>
+          {/* Imagem depois */}
+          <img
+            src="/assets/depois1.jpg"
+            alt="Depois"
+            className="after-img"
+            style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
+          />
+
+          {/* Imagem antes */}
+          <img
+            src="/assets/antes1.jpg"
+            alt="Antes"
+            className="before-img"
+            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+          />
+
+          {/* Linha divisória */}
           <div className="slider-handle" style={{ left: `${sliderPosition}%` }}>
             <div className="slider-button"></div>
           </div>
